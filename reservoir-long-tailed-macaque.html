@@ -1,0 +1,18 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ลิงแสม</title><link rel="stylesheet" href="../style.css"><script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script></head><body>
+<header><a class="back" href="../reservoir.html">‹ กลับ</a><h1>ลิงแสม</h1></header><main class="wrap"><div style="position:relative">
+<model-viewer id="mv" src="https://static.wixstatic.com/3d/57c050_e0066d41e1f34f248d721eaa83c4798b.glb" alt="โมเดล 3 มิติของลิงแสม" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" camera-controls touch-action="pan-y" auto-rotate shadow-intensity="1" loading="eager">
+<button slot="ar-button" class="arbtn">📷 ส่องสัตว์ (AR)</button>
+<div class="bar" slot="progress-bar"><i id="pb"></i></div>
+</model-viewer></div>
+<p class="desc">ในระดับสากลนิยมเรียกว่า &quot;ลิงกินปู&quot; เพราะมีทักษะพิเศษในการหาอาหารริมน้ำ และในบางพื้นที่พวกมันยังรู้วิธีการใช้ก้อนหินเป็นเครื่องมือในการกะเทาะเปลือกหอยหรือถั่วอีกด้วย</p>
+<div id="st" class="status" hidden></div>
+<p class="note">หมุนและซูมโมเดลได้ด้วยนิ้ว กด "ส่องสัตว์ (AR)" แล้วส่องกล้องไปที่พื้นเพื่อวางสัตว์ลงในพื้นที่จริง<br>iPhone: เปิดหน้านี้ใน Safari · Android: ใช้ Chrome · ไฟล์โมเดลมีขนาดหลาย MB ควรใช้ Wi-Fi หรือรอให้แถบด้านบนโหลดเต็ม</p>
+<p class="note">อ่างเก็บน้ำนฤบดินทรจินดา</p>
+<script>
+const mv=document.getElementById('mv'),pb=document.getElementById('pb'),st=document.getElementById('st');
+mv.addEventListener('progress',e=>{pb.style.width=(e.detail.totalProgress*100)+'%';if(e.detail.totalProgress>=1)setTimeout(()=>pb.style.width='0',400);});
+mv.addEventListener('error',()=>{st.hidden=false;st.textContent='โหลดโมเดลไม่สำเร็จ ลองรีเฟรชหน้าหรือตรวจสอบอินเทอร์เน็ต';});
+mv.addEventListener('ar-status',e=>{if(e.detail.status==='failed'){st.hidden=false;st.textContent='อุปกรณ์นี้เปิด AR ไม่ได้ ยังดูโมเดล 3 มิติบนหน้าจอได้ตามปกติ';}});
+mv.addEventListener('load',()=>{if(!mv.canActivateAR){st.hidden=false;st.style.color='inherit';st.textContent='เบราว์เซอร์นี้ไม่รองรับ AR (เช่น คอมพิวเตอร์ หรือเปิดผ่านแอปอื่น) ให้เปิดลิงก์นี้ใน Safari บน iPhone หรือ Chrome บน Android';}});
+</script></main></body></html>
