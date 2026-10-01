@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>วิธีขึ้นเว็บ AR</title>
+<style>
+:root{--bg:#f6f8f3;--ink:#1f2d1f;--muted:#5b6b58;--green:#2f7d4f;--card:#fff;--line:#dfe7d8}
+@media (prefers-color-scheme:dark){:root{--bg:#121812;--ink:#e8efe4;--muted:#a9b8a4;--green:#5cbf83;--card:#1b231b;--line:#2c3a2c}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun","Noto Sans Thai",system-ui,-apple-system,sans-serif;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:20px;margin:28px 0 8px}
+.lead{color:var(--muted);margin:0 0 16px}
+ol{padding-left:22px}li{margin:6px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+code{background:var(--line);padding:1px 6px;border-radius:6px;font-size:14px;word-break:break-all}
+.warn{border-left:5px solid #c98a12}
+</style>
+</head>
+<body><div class="wrap">
+<h1>วิธีขึ้นเว็บหน้า AR ส่องสัตว์</h1>
+<p class="lead">ใช้ GitHub Pages ฟรี ไม่ต้องติดตั้งโปรแกรม ทำผ่านเว็บเบราว์เซอร์ทั้งหมด ประมาณ 10 นาที</p>
+
+<h2>ขั้นที่ 1 สร้างที่เก็บไฟล์ (repository)</h2>
+<ol>
+<li>เข้า <b>github.com</b> แล้วเข้าสู่ระบบ (ถ้ายังไม่มีบัญชี กด Sign up สมัครฟรี)</li>
+<li>กดปุ่ม <b>+</b> มุมขวาบน → <b>New repository</b></li>
+<li>ช่อง Repository name พิมพ์ <code>natureroute-ar</code></li>
+<li>เลือก <b>Public</b> แล้วกด <b>Create repository</b></li>
+</ol>
+
+<h2>ขั้นที่ 2 อัปโหลดไฟล์</h2>
+<ol>
+<li>ในหน้าที่ขึ้นมา กดลิงก์ <b>uploading an existing file</b></li>
+<li>เปิดโฟลเดอร์ <code>webar-site</code> ใน Finder กด <b>⌘A</b> เลือกทุกอย่าง แล้วลากไปวางในหน้าเว็บ<br>
+(ต้องมีโฟลเดอร์ <code>animals</code>, ไฟล์ <code>index.html</code>, <code>style.css</code>, <code>reservoir.html</code>, <code>thaplan.html</code>, <code>pangsida.html</code>)</li>
+<li>รอให้รายชื่อไฟล์ขึ้นครบ แล้วกดปุ่มสีเขียว <b>Commit changes</b></li>
+</ol>
+
+<h2>ขั้นที่ 3 เปิดเป็นเว็บไซต์</h2>
+<ol>
+<li>กดแท็บ <b>Settings</b> ด้านบนของ repository</li>
+<li>เมนูซ้ายเลือก <b>Pages</b></li>
+<li>ช่อง Source เลือก <b>Deploy from a branch</b> · Branch เลือก <b>main</b> และ <b>/ (root)</b> แล้วกด <b>Save</b></li>
+<li>รอ 1–2 นาที รีเฟรชหน้า จะเห็นลิงก์ เช่น <code>https://ชื่อผู้ใช้.github.io/natureroute-ar/</code></li>
+</ol>
+<div class="box">ส่งลิงก์นี้กลับมา จะได้ทำ QR code ของสัตว์ทั้ง 21 ตัว และแก้ manuscript ให้</div>
+
+<h2>ขั้นที่ 4 ทดสอบบน iPhone</h2>
+<div class="box warn">
+<ol>
+<li>เปิดลิงก์ใน <b>Safari</b> โดยตรง (ถ้าเปิดจาก LINE หรือ Facebook ให้กด “เปิดใน Safari” ก่อน ไม่อย่างนั้นปุ่ม AR จะไม่ทำงาน)</li>
+<li>เลือกโซน → เลือกสัตว์ → รอแถบสีเขียวด้านบนโหลดเต็ม → กด <b>ส่องสัตว์ (AR)</b></li>
+<li>ส่องกล้องไปที่พื้น สัตว์จะปรากฏในพื้นที่จริง แคปหน้าจอไว้ใช้เป็นภาพใน manuscript</li>
+</ol>
+<p>โมเดลบางตัวใหญ่ (หมูป่า 24 MB) ควรใช้ Wi-Fi</p>
+</div>
+
+<h2>ขั้นที่ 5 เชื่อมกับเว็บ Wix</h2>
+<p>ในหน้า “ส่องสัตว์ด้วย AR” บน Wix ให้แต่ละโซนบนแผนที่ลิงก์ไปที่หน้าโซนใหม่ เช่น
+<code>https://ชื่อผู้ใช้.github.io/natureroute-ar/reservoir.html</code>
+(<code>thaplan.html</code> สำหรับทับลาน, <code>pangsida.html</code> สำหรับปางสีดา)</p>
+</div></body></html>
